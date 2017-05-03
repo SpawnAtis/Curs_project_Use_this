@@ -32,74 +32,7 @@ public class ClientThread extends Thread {
             System.out.println(login+this.c.getMessage());
 
 
-           /* if (! this.c.getMessage().equals(Config.HELLO_MESSAGE)) {
-                System.out.println("[" + this.c.getLogin() + "]: " + this.c.getMessage());
-                Server.getChatHistory().addMessage(this.c);
-            } else {
-                outputStream.writeObject(Server.getChatHistory());
-                this.broadcast(Server.getUserList().getClientsList(), new Message("Server-Bot", "The user " + login + " has been connect"));
-            }
-            Server.getUserList().addUser(login, socket, outputStream, inputStream);
 
-            this.c.setOnlineUsers(Server.getUserList().getUsers());
-            this.broadcast(Server.getUserList().getClientsList(), this.c);
-
-            this.timer = new Timer(DELAY, new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    try {
-                        if (inPacks == outPacks) {
-                            outputStream.writeObject(new Ping());
-                            outPacks++;
-                            System.out.println(outPacks + " out");
-                        } else {
-                            throw new SocketException();
-                        }
-                    } catch (SocketException ex1) {
-                        System.out.println("packages not clash");
-                        System.out.println(login + " disconnected!");
-                        Server.getUserList().deleteUser(login);
-                        broadcast(Server.getUserList().getClientsList(), new Message("Server-Bot", "The user " + login + " has been disconnect", getUserList().getUsers()));
-                        flag = true;
-                        timer.schedule(new RemindTask(), seconds*1000);
-                    }  catch (IOException ex2) {
-                        ex2.printStackTrace();
-                    }
-                }
-            });
-
-            this.timer.start();
-            outputStream.writeObject(new Ping());
-            this.outPacks++;
-            System.out.println(outPacks + " out");
-
-            while (true) {
-                if(this.flag) {
-                    this.flag = false;
-                    break;
-                }
-                this.c = (Message) inputStream.readObject();
-
-                if (this.c instanceof Ping) {
-                    this.inPacks++;
-                    System.out.println(this.inPacks + " in");
-
-                } else if (! c.getMessage().equals(Config.HELLO_MESSAGE)) {
-                    System.out.println("[" + login + "]: " + c.getMessage());
-                    Server.getChatHistory().addMessage(this.c);
-
-                } else {
-                    outputStream.writeObject(Server.getChatHistory());
-                    this.broadcast(Server.getUserList().getClientsList(), new Message("Server-Bot", "The user " + login + " has been connect"));
-                }
-
-                this.c.setOnlineUsers(Server.getUserList().getUsers());
-
-                if (! (c instanceof Ping) && ! c.getMessage().equals(Config.HELLO_MESSAGE)) {
-                    System.out.println("Send broadcast Message: "" + c.getMessage() + """);
-                    this.broadcast(Server.getUserList().getClientsList(), this.c);
-                }
-            }*/
 
         } catch (SocketException e) {
             //System.out.println(login + " disconnected!");

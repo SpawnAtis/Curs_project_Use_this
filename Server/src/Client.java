@@ -3,6 +3,7 @@ import java.io.ObjectOutputStream;
 import java.net.Socket;
 
 public class Client {
+
     private Socket socket;
     private ObjectOutputStream oos;
     private ObjectInputStream ois;
