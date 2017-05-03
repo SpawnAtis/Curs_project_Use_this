@@ -1,6 +1,7 @@
 import java.io.*;
 import java.net.InetAddress;
 import java.net.Socket;
+import by.pokosenko.*;
 
 public class SocketClient {
 

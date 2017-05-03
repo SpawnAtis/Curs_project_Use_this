@@ -1,6 +1,8 @@
+package by.pokosenko;
 import java.io.Serializable;
 import java.sql.Time;
 import java.util.Date;
+
 
 public class Message implements Serializable {
 

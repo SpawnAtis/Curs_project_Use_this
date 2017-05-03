@@ -7,6 +7,7 @@ import java.net.Socket;
 import java.net.SocketException;
 import java.util.ArrayList;
 import java.util.Timer;
+import by.pokosenko.*;
 
 public class ClientThread extends Thread {
 
